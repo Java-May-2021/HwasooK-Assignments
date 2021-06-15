@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Languages</h1>
-<table>
+<table border=1>
 <thead>
 <tr>
 <td>Name</td>
