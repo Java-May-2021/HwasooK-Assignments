@@ -15,7 +15,7 @@
 
 <div class="container">
 <h1>Welcome to Dogs dot Com</h1>
-<a href="add">Add A New Dog</a>
+<a href="add">Add A New Dog</a> | <a href="/toys/new">Gift Dog A Toy</a>
 <hr>
 
 <p>All Dogs Will Be Displayed Here</p>

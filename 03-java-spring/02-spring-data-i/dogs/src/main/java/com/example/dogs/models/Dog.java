@@ -33,7 +33,12 @@ public class Dog {
 	private Date createdAt;
 	private Date updatedAt;
 	
+	//One to many
+	@OneToMany(mappedBy="dog", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<Toy> toys;
 
+	
+	
 	// One to One
 	@OneToOne(mappedBy="dog", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private Tag tag;
@@ -111,6 +116,14 @@ public class Dog {
 
 	public void setTag(Tag tag) {
 		this.tag = tag;
+	}
+
+	public List<Toy> getToys() {
+		return toys;
+	}
+
+	public void setToys(List<Toy> toys) {
+		this.toys = toys;
 	}
 
 //	public List<Toy> getToys() {

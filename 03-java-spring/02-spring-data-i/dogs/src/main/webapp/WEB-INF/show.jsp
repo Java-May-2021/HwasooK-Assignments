@@ -17,6 +17,32 @@
 <p>Age: ${dog.age}</p>
 <hr>
 
+<h3>Toys</h3>
+<ol>
+<c:forEach items="${dog.toys}" var="toy">
+	<table>
+	<tr>
+	<th>name</th>
+	<th>has squeeker</th>
+	<th>color</th>
+	<th>price</th>
+	<th>sction</th>
+	</tr>
+	<tbody>
+	<tr>
+	<td>${toy.name}</td>
+	<td>${toy.hasSqueeker}</td>
+	<td>${toy.color}</td>
+	<td>${toy.price}</td>
+	<td><a href="/toys/delete/${toy.id}">Delete </a></td>
+	</tr>
+	<tbody>
+	</table>
+
+</c:forEach>
+</ol>
+
+
 <c:choose>
 <c:when test="${dog.tag != null}">
 <h1>Dog has been registered!</h1>
