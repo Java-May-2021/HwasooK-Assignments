@@ -11,6 +11,12 @@
 <body>
 <div class="container">
 <h1>Details For ${dog.name}</h1>
+<h3>Liked By</h3>
+<ul>
+<c:forEach items="${dog.likers}" var="user">
+<li>${user.firstName } ${user.lastName }</li>
+</c:forEach>
+</ul>
 <hr>
 <p>Name: ${dog.name}</p>
 <p>Breed: ${dog.breed}</p>

@@ -11,10 +11,9 @@
 <body>
 <c:out value="${2+2}"/>
 
-
-
 <div class="container">
 <h1>Welcome to Dogs dot Com</h1>
+<h3>Welcome ${user.firstName} ${user.lastName}</h3>
 <a href="add">Add A New Dog</a> | <a href="/toys/new">Gift Dog A Toy</a>
 <hr>
 
@@ -23,19 +22,31 @@
 <table class="table table-dark">
 <thead>
 <tr>
-<td>id</td>
+<td>Action</td>
 <td>Name</td>
 <td>Species</td>
 <td>Age</td>
+<td>Number of Likes</td>
 </thead>
 <tbody>
-
 <c:forEach items="${allDogs}" var="dog">
 <tr>
-<td>${dog.id}</td>
+
+<td>
+<c:choose>
+<c:when test="${dog.likers.contains(user)}">
+<a href="/unlike/${dog.id}">Unlike</a>
+</c:when>
+<c:otherwise>
+<a href="/like/${dog.id}">Like</a>
+</c:otherwise>
+</c:choose>
+</td>
+
 <td><a href="/show/${dog.id}">${dog.name}</a></td>
 <td>${dog.breed}</td>
 <td>${dog.age}</td>
+<td>${dog.likers.size()}</td>
 </tr>
 </c:forEach>
 
